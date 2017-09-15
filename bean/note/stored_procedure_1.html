@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>oracle,分页存储过程</title>
+		<link rel="stylesheet" href="../../css/log.css" />
+		<link rel="stylesheet" href="../../layui/css/layui.css" />
+		<script src="../../layui/layui.js"></script>
+	</head>
+	<body>
+		<div class="left">
+			<span class="layui-breadcrumb">
+			  <a href="../../main.html">&nbsp;<i class="layui-icon">&#xe68e;</i></a>
+			  <a href="../class/note.html">笔记</a>
+			  <a><cite>PL/SQL入门</cite></a>
+			</span>
+			<div class="title">PL/SQL入门</div>
+			<div class="msg">
+				<pre class="layui-code">
+--开启控制输出
+set serveroutput on;
+--打印Hello World
+declare
+    --说明部分
+begin
+    --程序体
+    dbms_output.put_line('Hello Wrold');
+end;
+
+--使用基本多的数据类型
+declare
+    pint number;
+    pvarchar varchar2(4);
+    pdate date;
+begin
+    pint := 1;
+    pvarchar := 'ABD';
+    pdate := sysdate;
+    dbms_output.put_line(pint);
+    dbms_output.put_line(pvarchar);
+    dbms_output.put_line(pdate);
+    dbms_output.put_line(pdate-1);
+end;
+
+--记录变量
+declare
+    r users%rowtype;
+begin
+    select * into r from users where id='1001';
+    dbms_output.put_line(r.id);
+    dbms_output.put_line(r.name);
+end;   
+
+--使用引用类型
+declare
+    username users.name%type;
+    pid users.id%type;
+begin
+    select id,name into pid,username from users where id='1001';
+    dbms_output.put_line(pid);
+    dbms_output.put_line(username);
+end;
+
+/*
+判断用户从键盘输入的数字
+1.如何使用if语句
+2.接收一个键盘输入(字符串)
+*/
+--接收一个键盘输入
+--num：地址值，含义是:在该地址上保存了输入的值
+accept num prompt '请输入一个数字';
+declare
+    --定义变量保存用户从键盘输入的数字
+    pnum number := &num;
+begin
+    if pnum = 0 then dbms_output.put_line('您输入数字是0');
+    elsif pnum = 1 then dbms_output.put_line('您输入的是1');
+    else dbms_output.put_line('您输入的不是0也不是1');
+    end if;
+end;
+
+--使用while循环打印数字的1~10
+declare
+  --定义循环变量
+    pnum number := 1;
+begin
+    while pnum <= 10 loop
+        --循环体
+        dbms_output.put_line(pnum);
+        --使该变量+1
+        pnum := pnum+1;
+    end loop;
+end;
+
+--使用loop循环打印1~10
+declare
+    --定义循环变量
+    pnum number := 1;
+begin
+    loop
+        --退出条件:循环变量大于10
+        exit when pnum > 10;
+            dbms_output.put_line(pnum);
+            pnum := pnum + 1;
+    end loop;
+end;  
+ 
+--使用for循环打印1-10
+declare
+    pnum number := 1;
+begin
+    for pnum in 1..10 loop
+        dbms_output.put_line(pnum);
+    end loop;
+end; 
+
+--光标（就是一个结果集Result set）
+/*
+1.光标的属性
+    %found %notfound
+    %isopen：判断光标是否打开
+    %rowcount:影响的行数
+2.光标数的限制：默认情况下，oracle数据库只允许在同一个会话中，打开300个光标
+    修改光标数的限制:alter system set open_cursors = 400 scope=both
+    scope的取值:both,memory,spfile(数据库需要重启);
+*/
+declare
+    --定义一个光标
+    cursor cuser is select id,name from users;
+    --为光标定义对应的变量
+    pid users.id%type;
+    pname users.name%type;
+begin
+    --打开光标
+    open cuser;
+    loop
+        --取一条记录
+        fetch cuser into pid,pname;
+        exit when cuser%notfound;
+        dbms_output.put_line(pid||'的姓名是'||pname);
+    end loop;
+
+    --关闭光标
+    close cuser;
+end;
+--定义带参数的光标
+declare
+    cursor temp(pid number) is select name from users where id=pid;
+    pname users.name%type;
+begin
+    open temp(1001);
+        loop
+            fetch temp into pname;
+            exit when temp%notfound;
+            dbms_output.put_line(pname);
+        end loop;
+    close temp;
+end;
+
+--例外：例外是程序设计语言提供的一种功能，用来增强程序的健壮性和容错性
+/*
+  ·Zero_Divide(被零除)
+  ·Value_error(算术或转换)
+  ·Timeout_on_resource(在等待资源发生超时)
+  ·no_data_found(没有找到数据)
+  ·Too_many_rows(select...into语句匹配多个行)
+*/
+declare
+    pname users.name%type;
+begin
+    select name into pname from users where id=1;
+exception
+    when no_data_found then dbms_output.put_line('没有找到数据');
+    when others then dbms_output.put_line('其他例外');
+end;
+
+--自定义例外
+declare
+  no_excel exception; --声明例外
+begin
+    raise no_excel; --抛出例外
+exception
+    when no_excel then dbms_output.put_line('自定义例外');
+end;
+
+--分页存储过程
+--创建包
+create or replace package tp as type test_cursor is ref cursor;
+end tp;
+/
+--创建过程
+create or replace procedure fenye(
+       tableName in varchar2,--表名
+       pageSize in number,--一页显示记录数
+       pageNow in number,--当前页
+       myrows out number,--返回会总记录数
+       p_cursor out tp.test_cursor--返回的记录集
+) is
+  --定义部分
+  v_sql varchar2(1000);
+  v_begin number;--开始记录
+  v_end number;--结束记录
+
+begin
+    v_begin := (pageNow-1)*pageSize+1;
+    V_end := pageNow*pageSize;   
+    v_sql := 'select * from (select t1.* ,rownum rn from '||tableName||') t1 where rownum<='|| v_end ||') where rn>='|| v_begin;
+    --把游标和sql关联
+    open p_cursor for v_sql;
+    close p_cursor;
+    v_sql := 'select count(*) from '||tableName;
+    --执行sql，并把返回值赋值给myrows;
+    execute immediate v_sql into myrows;
+end;
+/
+
+				</pre>     
+				<span style="color: red;">如若转载请标明出处</span>
+			</div>
+			<div class="author">
+				<br /><br />
+				<span style="color: #8D8D8D;">2017-09-12 14:18:48</span>
+				<br />
+				——zuoqy·北京&nbsp;&nbsp;
+			</div>
+			<i class="layui-icon return" onclick="window.parent.document.documentElement.scrollTop=0;history.back();">&#xe65c;</i>
+		</div>
+	</body>
+	<script>
+		layui.use(['code','element'],function(){
+			layui.code({
+				title: 'PL/SQL',
+				skin:'notepad'
+			});
+		});
+	</script>
+</html>
