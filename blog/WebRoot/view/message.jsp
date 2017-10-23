@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="common.jsp"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>留言反馈</title>
+		<link rel="stylesheet" href="../css/page.css" />
+		<script src="../js/page.js"></script>
+	</head>
+	<body>
+		<div class="left">
+			<span class="layui-breadcrumb">
+			  <a href="${pageContext.request.contextPath}/main.do">&nbsp;<i class="layui-icon">&#xe68e;</i></a>
+			  <a><cite>留言反馈</cite></a>
+			</span>
+			<fieldset class="layui-elem-field">
+  				<legend><img src="../img/log.png" width="30px" height="30px"/>zuoqy</legend>
+				    <div class="layui-field-box">
+				  		说了一堆<br /><br />
+				  		<div class="field_bottom">
+				  			<i class="layui-icon">&#xe60e;2017-09-19 08:36:22</i>
+				  			<a><img src="../img/zan.png" onclick="dzan(this)" value="0"/>&nbsp;<span>0</span></a>
+				  			&nbsp;
+				  			<a href="javascript:huifu()"><img src="../img/huifu.png"/><span>回复</span></a>
+				  			
+				  		</div>
+				    </div>
+			</fieldset>
+			<div id="out_user" class="nav-user">
+				<a class="unlogin" href="/user/login/">
+					<img src="../img/login.png"></img>
+				</a>
+				<a href="/user/login/">登入</a>
+				<a href="/user/reg/">注册</a>
+				<i>或者直接使用社交账号快捷注册</i>
+				<a href="">
+					<img class="qq" src="../img/logo2.png"></img>
+				</a>
+				<a href="">
+					<img class="qq" src="../img/logo1.png"></img>
+				</a>
+			</div>
+			<div style="width: 660px;margin-left: 10px;">
+				<textarea id="edit" style="display: none;"></textarea>
+			</div>
+			<button class="layui-btn">提交回复</button>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,85 @@
+.left {
+	margin-top:20px;
+	width:700px;
+	float: left;
+	background: white;
+}
+
+.recommend {
+	margin-top: 10px;
+	width: 700px;
+	height: 20px;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: 'sansationregular';
+	border-bottom: solid #F67922 3px;
+}
+
+.hotspot {
+	margin-top: 12.8px;
+	border-bottom: solid #E7E7E7 2px;
+	width: 700px;
+	height: 160px;
+}
+.hotspot:hover {
+	background: #FFEEE8;
+}
+.hotspot_context{
+	margin-top: 10px;
+	width: 520px;
+	height: 160px;	
+	float: right;
+}
+.hc_title {
+	font-size: 18px;font-weight:600;display: block;font-family: '楷体';
+}
+.hc_msg {
+	font-size: 14px;line-height: 26px;display: block;color: #666666;margin-top: 5px;
+}
+
+.hc_bg {
+	color:#8D8D8D;height: 20px;background: url(../img/bg.png) no-repeat;padding: 0px 0px 0px 20px;display: inline-block;margin-top:6px;
+}
+.hc_bg a:hover{cursor: pointer;}
+
+/*************以上左边，以下右边*************/
+.right {
+	margin-top:20px;
+	width:280px;
+	height: 98.2%;
+	float: right;
+	background: white;
+}
+.logo {
+	width: 80px;
+	height: 80px;
+	background: url(../img/logo1.png) center;
+	vertical-align:middle;
+}
+.logoFont {
+	font-size: 10px;
+	color: #8D8D8D;
+}
+.logoFont:hover {
+	color: royalblue;
+}
+.sTitle {
+	margin-top: 7px;
+	width: 280px;
+	height: 20px;
+	font-size: 16px;
+	font-family: 'sansationregular';
+	border-bottom: solid #FFB800 2px;
+}
+
+.attention {
+	margin-top: 10px;
+	width: 280px;
+	height: 110px;
+}
+
+.tab {
+	margin-top: 20px;
+	width: 280px;
+	height: 300px;
+}

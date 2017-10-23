@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zuoqy.blog.dao.BeanDao">
+	<select id="selectBeanMain" resultType="bean">
+		SELECT a.id,a.title,a.msgSmall,a.time,a.anthor,a.img,a.type,b.itemName typeName,a.commentCount,a.viewCount FROM bean a 
+		<include refid="leftType" />
+		ORDER BY a.time DESC LIMIT 0,7
+	</select>
+	
+	<select id="selectBeanType" parameterType="java.util.Map" resultType="bean">
+		SELECT a.id,a.title,a.msg,a.msgSmall,a.time,a.anthor,a.img,a.type,a.commentCount,a.viewCount,b.itemName typeName FROM bean a
+		<include refid="leftType" />
+		WHERE a.type=#{type}
+		ORDER BY a.time DESC
+	</select>
+	
+	<select id="getBean" parameterType="java.util.Map" resultType="bean">
+		SELECT a.id,a.title,a.msg,a.time,a.anthor,a.type,a.viewCount,b.itemName typeName FROM bean a
+		<include refid="leftType" />
+		where a.id=#{id,jdbcType=VARCHAR}
+	</select>
+	
+	<update id="updateBean" parameterType="java.util.Map">
+		update bean set viewCount=#{viewCount,jdbcType=VARCHAR} where id = #{id,jdbcType=VARCHAR}
+	</update>
+	
+	<sql id="leftType">
+		LEFT JOIN dictionary b ON a.type=b.itemCode and b.dictCode='type'
+	</sql>
+</mapper>
