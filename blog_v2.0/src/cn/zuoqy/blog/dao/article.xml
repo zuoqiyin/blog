@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zuoqy.blog.dao.ArticleDao">
+	<select id="selectArticle" parameterType="java.util.Map" resultType="article">
+		select a.*,d.itemName typeName from article a
+		left join dict d on a.type=d.itemCode and d.dictType='type'
+		<include refid="whereArtSql"></include>
+		order by a.time desc
+		limit #{index},#{size}
+	</select>
+	
+	<select id="getCount" parameterType="java.util.Map" resultType="int">
+		select count(1) from article a
+		<include refid="whereArtSql"></include>
+	</select>
+	
+	<sql id="whereArtSql">
+		<trim prefix="WHERE" prefixOverrides="AND|OR">
+			<if test="aid!=null and aid!=''"> and a.aid=#{aid}</if>
+			<if test="type!=null and type!=''"> and a.type=#{type}</if>
+		</trim>
+	</sql>
+</mapper>
