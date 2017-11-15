@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>主页</title>
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="layui/css/layui.css" />
+		<script src="js/jquery-3.1.0.min.js"></script>
+		<script src="layui/layui.all.js"></script>
+		<script src="js/main.js"></script>
+	</head>
+	<body>
+		<div class="left">
+			<div class="layui-carousel" id="carousel">
+			    <div carousel-item>
+				    <div><img src="img/carousel1.jpg" style="width: 100%;"></div>
+				    <div><img src="img/carousel2.jpg" style="width: 100%;"></div>
+				    <div><img src="img/carousel3.jpg" style="width: 100%;"></div>
+				    <div><img src="img/carousel4.jpg" style="width: 100%;"></div>
+				    <div><img src="img/carousel5.jpg" style="width: 100%;"></div>
+			    </div>
+			</div>
+			<div class="recommend">文章推荐</div>
+			<div class="hotspot">
+				<img src="img/v0.1.jpg" width="160" height="132" style="margin-top: 12px;"/>
+				<div class="hotspot_context">
+					<a href="bean/log/v0.1.html">
+						<span class="hc_title"><i class="layui-icon">&#xe609;</i>终于等来了,zuoqy博客v0.1!</span>
+					</a>
+					<span class="hc_msg">
+						从准备实施个人博客这个计划，到现在一个月不到，准备的东西很少，想着先运营起来再说，边测试边改版，吸取广大好友的意见，
+						针对问题慢慢改进。有了这个发版也是博主，撸了一晚上。。。
+						<a href="bean/log/v0.1.html" style="color: green;">【详情】</a>
+					</span>
+					<span>
+						<span class="hc_bg" style="background-position:0px 4px;display: inline-block;">
+							<a href="bean/class/log.html" style="color: green;">日&nbsp;&nbsp;志</a>
+						</span>
+						<span  class="hc_bg" style="background-position:0px -48px;">2017-09-12 12:47:48</span>
+						<!--<span class="hc_bg" style="margin-left:120px;background-position:0px -22px;">
+							<a style="color: #8D8D8D;">评论(2)</a>
+						</span>
+						<span class="hc_bg" style="background-position:0px -72px;">
+							<a style="color: #8D8D8D;">浏览(222)</a>
+						</span>-->
+					</span>
+				</div>
+			</div>
+			<div class="hotspot">
+				<img src="img/note_sp.jpg" width="160" height="132" style="margin-top: 12px;"/>
+				<div class="hotspot_context">
+					<a href="bean/note/n01.html">
+						<span class="hc_title">PL/SQL入门</span>
+					</a>
+					<span class="hc_msg">
+						--开启控制输出
+						set serveroutput on;
+						--打印Hello World
+						declare
+					    --说明部分
+						begin
+					    --程序体
+					   		dbms_output.put_line('Hello Wrold');
+						end;
+						--使用基本多的数据类型
+						declare
+						    pint number;
+						    pvarchar varchar2(4);
+						    pdate date;
+						<a href="bean/note/n01.html" style="color: green;">【详情】</a>
+					</span>
+					<span>
+						<span class="hc_bg" style="background-position:0px 4px;display: inline-block;">
+							<a href="bean/class/note.html" style="color: green;">笔&nbsp;&nbsp;记</a>
+						</span>
+						<span  class="hc_bg" style="background-position:0px -48px;">2017-09-14 12:12:12</span>
+						<!--<span class="hc_bg" style="margin-left:120px;background-position:0px -22px;">
+							<a style="color: #8D8D8D;">评论(2)</a>
+						</span>
+						<span class="hc_bg" style="background-position:0px -72px;">
+							<a style="color: #8D8D8D;">浏览(222)</a>
+						</span>-->
+					</span>
+				</div>
+			</div>
+			<!--<div class="hotspot">
+				<img src="img/carousel1.jpg" width="160" height="132" style="margin-top: 12px;"/>
+				<div class="hotspot_context">
+					<a><span class="hc_title">文章标题,也许很长哦</span></a>
+					<span class="hc_msg">
+						这里是文章内容啦啦啦啦啦啦啦啦啦啦啦了啦啦啦啦啦啦阿拉啦啦啦啦啦啦啦啦啦啦啦了啦啦啦案例啦啦啦啦啦啦
+						应该是文章内容简好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好
+					</span>
+					<span>
+						<span class="hc_bg" style="background-position:0px 4px;display: inline-block;">
+							<a style="color: green;">日志散文</a>
+						</span>
+						<span  class="hc_bg" style="background-position:0px -48px;">2017-09-09 12:12:12</span>
+						<span class="hc_bg" style="margin-left:120px;background-position:0px -22px;">
+							<a style="color: #8D8D8D;">评论(2)</a>
+						</span>
+						<span class="hc_bg" style="background-position:0px -72px;">
+							<a style="color: #8D8D8D;">浏览(222)</a>
+						</span>
+					</span>
+				</div>
+			</div>
+			<div class="hotspot">
+				<img src="img/carousel1.jpg" width="160" height="132" style="margin-top: 12px;"/>
+				<div class="hotspot_context">
+					<a><span class="hc_title">文章标题,也许很长哦</span></a>
+					<span class="hc_msg">
+						这里是文章内容啦啦啦啦啦啦啦啦啦啦啦了啦啦啦啦啦啦阿拉啦啦啦啦啦啦啦啦啦啦啦了啦啦啦案例啦啦啦啦啦啦
+						应该是文章内容简好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好
+					</span>
+					<span>
+						<span class="hc_bg" style="background-position:0px 4px;display: inline-block;">
+							<a style="color: green;">日志散文</a>
+						</span>
+						<span  class="hc_bg" style="background-position:0px -48px;">2017-09-09 12:12:12</span>
+						<span class="hc_bg" style="margin-left:120px;background-position:0px -22px;">
+							<a style="color: #8D8D8D;">评论(2)</a>
+						</span>
+						<span class="hc_bg" style="background-position:0px -72px;">
+							<a style="color: #8D8D8D;">浏览(222)</a>
+						</span>
+					</span>
+				</div>
+			</div>
+			<div class="hotspot">
+				<img src="img/carousel1.jpg" width="160" height="132" style="margin-top: 12px;"/>
+				<div class="hotspot_context">
+					<a><span class="hc_title">文章标题,也许很长哦</span></a>
+					<span class="hc_msg">
+						这里是文章内容啦啦啦啦啦啦啦啦啦啦啦了啦啦啦啦啦啦阿拉啦啦啦啦啦啦啦啦啦啦啦了啦啦啦案例啦啦啦啦啦啦
+						应该是文章内容简好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好
+					</span>
+					<span>
+						<span class="hc_bg" style="background-position:0px 4px;display: inline-block;">
+							<a style="color: green;">日志散文</a>
+						</span>
+						<span  class="hc_bg" style="background-position:0px -48px;">2017-09-09 12:12:12</span>
+						<span class="hc_bg" style="margin-left:120px;background-position:0px -22px;">
+							<a style="color: #8D8D8D;">评论(2)</a>
+						</span>
+						<span class="hc_bg" style="background-position:0px -72px;">
+							<a style="color: #8D8D8D;">浏览(222)</a>
+						</span>
+					</span>
+				</div>
+			</div>
+			<div class="hotspot">
+				<img src="img/carousel1.jpg" width="160" height="132" style="margin-top: 12px;"/>
+				<div class="hotspot_context">
+					<a><span class="hc_title">文章标题,也许很长哦</span></a>
+					<span class="hc_msg">
+						这里是文章内容啦啦啦啦啦啦啦啦啦啦啦了啦啦啦啦啦啦阿拉啦啦啦啦啦啦啦啦啦啦啦了啦啦啦案例啦啦啦啦啦啦
+						应该是文章内容简好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好
+					</span>
+					<span>
+						<span class="hc_bg" style="background-position:0px 4px;display: inline-block;">
+							<a style="color: green;">日志散文</a>
+						</span>
+						<span  class="hc_bg" style="background-position:0px -48px;">2017-09-09 12:12:12</span>
+						<span class="hc_bg" style="margin-left:120px;background-position:0px -22px;">
+							<a style="color: #8D8D8D;">评论(2)</a>
+						</span>
+						<span class="hc_bg" style="background-position:0px -72px;">
+							<a style="color: #8D8D8D;">浏览(222)</a>
+						</span>
+					</span>
+				</div>
+			</div>
+			<div class="hotspot">
+				<img src="img/carousel1.jpg" width="160" height="132" style="margin-top: 12px;"/>
+				<div class="hotspot_context">
+					<a><span class="hc_title">文章标题,也许很长哦</span></a>
+					<span class="hc_msg">
+						这里是文章内容啦啦啦啦啦啦啦啦啦啦啦了啦啦啦啦啦啦阿拉啦啦啦啦啦啦啦啦啦啦啦了啦啦啦案例啦啦啦啦啦啦
+						应该是文章内容简好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好
+					</span>
+					<span>
+						<span class="hc_bg" style="background-position:0px 4px;display: inline-block;">
+							<a style="color: green;">日志散文</a>
+						</span>
+						<span  class="hc_bg" style="background-position:0px -48px;">2017-09-09 12:12:12</span>
+						<span class="hc_bg" style="margin-left:120px;background-position:0px -22px;">
+							<a style="color: #8D8D8D;">评论(2)</a>
+						</span>
+						<span class="hc_bg" style="background-position:0px -72px;">
+							<a style="color: #8D8D8D;">浏览(222)</a>
+						</span>
+					</span>
+				</div>
+			</div>-->
+		</div>
+	</body>
+</html>

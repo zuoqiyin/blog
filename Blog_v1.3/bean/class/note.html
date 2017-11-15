@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>笔记分类</title>
+		<link rel="stylesheet" href="../../css/main.css" />
+		<link rel="stylesheet" href="../../layui/css/layui.css" />
+		<script src="../../layui/layui.js"></script>
+	</head>
+	<body>
+		<div class="left">
+			<span class="layui-breadcrumb">
+			  <a href="../../main.html">&nbsp;&nbsp;<i class="layui-icon">&#xe68e;</i></a>
+			  <a><cite>笔记</cite></a>
+			</span>
+			<div class="hotspot">
+				<img src="../../img/note_sp.jpg" width="160" height="132" style="margin-top: 12px;"/>
+				<div class="hotspot_context">
+					<a href="../../bean/note/n01.html">
+						<span class="hc_title">PL/SQL入门</span>
+					</a>
+					<span class="hc_msg">
+						--开启控制输出
+						set serveroutput on;
+						--打印Hello World
+						declare
+					    --说明部分
+						begin
+					    --程序体
+					   		dbms_output.put_line('Hello Wrold');
+						end;
+						--使用基本多的数据类型
+						declare
+						    pint number;
+						    pvarchar varchar2(4);
+						    pdate date;
+						<a href="../../bean/note/n01.html" style="color: green;">【详情】</a>
+					</span>
+					<span>
+						<span class="hc_bg" style="background-position:0px 4px;display: inline-block;">
+							<a style="color: green;">笔&nbsp;&nbsp;记</a>
+						</span>
+						<span  class="hc_bg" style="background-position:0px -48px;">2017-09-09 12:12:12</span>
+						<!--<span class="hc_bg" style="margin-left:120px;background-position:0px -22px;">
+							<a style="color: #8D8D8D;">评论(2)</a>
+						</span>
+						<span class="hc_bg" style="background-position:0px -72px;">
+							<a style="color: #8D8D8D;">浏览(222)</a>
+						</span>-->
+					</span>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		layui.use(['element']);
+	</script>
+</html>

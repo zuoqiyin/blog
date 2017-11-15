@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../../css/page.css" />
+		<link rel="stylesheet" href="../../layui/css/layui.css" />
+		<script src="../../layui/layui.js"></script>
+		<script type="text/javascript" src="../../js/jquery-3.1.0.min.js" ></script>
+		<script src="../../js/page.js"></script>
+	</head>
+	<body>
+		<div class="left">
+			<span class="layui-breadcrumb">
+			  <a href="../../main.html">&nbsp;<i class="layui-icon">&#xe68e;</i></a>
+			  <a href="../class/log.html">日志</a>
+			  <a><cite><i class="layui-icon">&#xe609;</i>终于等来了,zuoqy博客v0.1！</cite></a>
+			</span>
+			<div class="title"><i class="layui-icon">&#xe609;</i>终于等来了,zuoqy博客v0.1！</div>
+			<div class="msg">
+从准备实施个人博客这个计划，到现在一个月不到，准备的东西很少，想着先运营起来再说，边测试边改版，吸取广大好友的意见，针对问题慢慢改进。有了这个发版也是博主，撸了一晚上，
+第一次配置服务器，有些地方总会遇到问题，索性，解决了，关于网页加载慢的问题，博主正在积极解决!请小主们稍安勿躁。
+<br /><br />
+有想法有意见，欢迎点击有边关注我与我交流。时间有限，留言功能还未上线
+<br/><br/>
+目前这个v0.1版本，是纯前端组成，还没有涉及后端。中间有段时间一直在想如果数据太多了，用纯前端是不是我这布局会有问题，页面会不会变形，并且自己花了一天时间
+也搭了一个带后台的项目，后台是java实现的，使用了一个spring boot框架，感觉修改一些页面样式，太麻烦了，每次都得重启服务，想想第一版，应该不会有太多数
+据吧!就又用回到HBuilder，使用纯前端编辑项目。中间来来回回，自己纠结了好几次，不过最终还是拿这个版发布了。
+				<br /><br />
+				<img src="../../img/v0.1.jpg" width="680" height="300"/>
+				<br /><br />
+				<span style="color: red;">如若转载请标明出处</span>
+			</div>
+			<div class="author">
+				<br /><br />
+				<span style="color: #8D8D8D;">2017-09-16 03:47:48</span>
+				<br />
+				——zuoqy·北京&nbsp;&nbsp;
+			</div>
+			<fieldset class="layui-elem-field layui-field-title">
+  				<legend>畅言一下</legend>
+			</fieldset>
+			<fieldset class="layui-elem-field">
+  				<legend><img src="../../img/log.png" width="30px" height="30px"/>zuoqy</legend>
+				    <div class="layui-field-box">
+				  		说了一堆<br /><br />
+				  		<div class="field_bottom">
+				  			<i class="layui-icon">&#xe60e;2017-09-19 08:36:22</i>
+				  			<a><img src="../../img/zan.png" onclick="dzan(this)" value="0"/>&nbsp;<span>0</span></a>
+				  			&nbsp;
+				  			<a href="javascript:huifu()"><img src="../../img/huifu.png"/><span>回复</span></a>
+				  			
+				  		</div>
+				    </div>
+			</fieldset>
+			<div id="out_user" class="nav-user">
+				<a class="unlogin" href="/user/login/">
+					<img src="../../img/login.png"></img>
+				</a>
+				<span>
+				<a href="/user/login/">登入</a>
+				<a href="/user/reg/">注册</a>
+				<i>或者直接使用社交账号快捷注册</i>
+				<a href="">
+					<img class="qq" src="../../img/logo2.png"></img>
+				</a>
+				<a href="">
+					<img class="qq" src="../../img/logo1.png"></img>
+				</a>
+			</div>
+			<div style="width: 660px;margin-left: 10px;">
+				<textarea id="edit" style="display: none;"></textarea>
+			</div>
+			<button class="layui-btn">提交回复</button>
+			
+			<i class="layui-icon return" onclick="window.parent.document.documentElement.scrollTop=0;history.back();">&#xe65c;</i>
+		</div>
+	</body>
+	<script>
+		layui.use(['code','element','layedit'],function(){
+			layui.code({
+				title: 'PL/SQL',
+				skin:'notepad'
+			});
+			
+			var layedit = layui.layedit;
+  			layedit.build('demo'); //建立编辑器
+		});
+	</script>
+</html>

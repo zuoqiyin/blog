@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>时间轴</title>
+		<link rel="stylesheet" href="layui/css/layui.css" />
+		<link rel="stylesheet" href="css/log.css" />
+		<script src="js/jquery-3.1.0.min.js"></script>
+		<script src="layui/layui.js"></script>
+		<style type="text/css">
+			.left {
+				margin-top:20px;
+				width:700px;
+				height: 98.2%;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="left">
+			<span class="layui-breadcrumb">
+			  <a href="main.html">&nbsp;<i class="layui-icon">&#xe68e;</i></a>
+			  <a><cite>时光轴</cite></a>
+			</span>
+			<br /><br /><br />
+			<ul class="layui-timeline" style="margin-left: 3px;">
+			  <li class="layui-timeline-item">
+			    <i class="layui-icon layui-timeline-axis">&#xe756;</i>
+			    <div class="layui-timeline-content layui-text">
+			      <h3 class="layui-timeline-title">2017年9月16日，清晨，发布。。。</h3>
+			    </div>
+			  </li>
+			  <li class="layui-timeline-item">
+			    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+			    <div class="layui-timeline-content layui-text">
+			      <h3 class="layui-timeline-title">2017年8月，zuoqy博客 孵化。。。</h3>
+			    </div>
+			  </li>
+			  <li class="layui-timeline-item">
+			    <i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop layui-timeline-axis">&#xe63e;</i>
+			    <div class="layui-timeline-content layui-text">
+			      <h3 class="layui-timeline-title">更久前。。。</h3>
+			    </div>
+			  </li>
+			</ul>
+			<i class="layui-icon return" onclick="history.go(-1);">&#xe65c;</i><!--$(parent.document).find('html,body').scrollTop(0);-->
+  		</div>
+	</body>
+	<script>
+		layui.use(['element']);
+	</script>
+</html>
