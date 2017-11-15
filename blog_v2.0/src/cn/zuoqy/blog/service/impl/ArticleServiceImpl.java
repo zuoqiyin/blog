@@ -29,7 +29,12 @@ public class ArticleServiceImpl implements ArticleService {
 		params.put("index", 0);
 		params.put("size", 1);
 		params.put("aid", aid);
-		return articleDao.selectArticle(params).get(0);
+		Article art = articleDao.selectArticle(params).get(0);
+		params.clear();
+		params.put("aid", aid);
+		params.put("viewCount", (Integer.parseInt(art.getViewCount())+1)+"");
+		articleDao.updateArticle(params);
+		return art;
 	}
 
 	@Override
@@ -37,5 +42,16 @@ public class ArticleServiceImpl implements ArticleService {
 		return articleDao.getCount(params);
 	}
 
-	
+	@Override
+	public void addCom(String aid) throws Exception {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("index", 0);
+		params.put("size", 1);
+		params.put("aid", aid);
+		Article art = articleDao.selectArticle(params).get(0);
+		params.clear();
+		params.put("aid", aid);
+		params.put("comCount", (Integer.parseInt(art.getComCount())+1)+"");
+		articleDao.updateArticle(params);
+	}
 }

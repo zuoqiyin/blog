@@ -6,5 +6,6 @@
 		<typeAlias type="cn.zuoqy.blog.model.User"    	 alias="user"/>
 		<typeAlias type="cn.zuoqy.blog.model.Dict"		 alias="dict"/>
 		<typeAlias type="cn.zuoqy.blog.model.Article"	 alias="article"/>
+		<typeAlias type="cn.zuoqy.blog.model.Message"    alias="message"/>
 	</typeAliases>
 </configuration>

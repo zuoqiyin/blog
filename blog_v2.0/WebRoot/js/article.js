@@ -11,6 +11,7 @@ layui.use(['jquery','flow','form'], function () {
     flow.load({
     	elem: '.blog-main-left', //流加载容器
     	isAuto: false,
+    	end: '没有更多的文章了~QAQ',
     	done: function(page,next) {
     		$.ajax({
         		type: 'GET',

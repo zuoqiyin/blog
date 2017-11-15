@@ -1,7 +1,8 @@
 var data = [
 	{'year':'2017','month':[
 	    {'title':'11月','day':[
-           	{'time':'11月11日 10:28','content':'<i class="fa fa fa-rocket"></i><i class="fa fa fa-rocket"></i><i class="fa fa fa-rocket"></i>&nbsp;zuoqy博客v2.0新项目正式构建!'}
+	        {'time':'11月11日 00:00','content':'<i class="fa fa-paper-plane-o"></i><i class="fa fa-paper-plane-o"></i><i class="fa fa-paper-plane-o"></i>&nbsp;zuoqy博客v2.0新项目发布!'},
+           	{'time':'11月01日 10:28','content':'<i class="fa fa fa-rocket"></i><i class="fa fa fa-rocket"></i><i class="fa fa fa-rocket"></i>&nbsp;zuoqy博客v2.0新项目正式构建!'}
         ]},
 		{'title':'10月','day':[
 		    {'time':'10月26日 13:52','content':'准备重新改版一个版本,心疼1.0版3秒钟,周末还是一如既往的折腾&nbsp;<i class="fa fa-hand-stop-o"></i>'},
@@ -43,11 +44,11 @@ layui.use('jquery', function () {
 	$(function () {
 	    $('.monthToggle').click(function () {
 	        $(this).parent('h3').siblings('ul').slideToggle('slow');
-	        $(this).siblings('i').toggleClass('fa-caret-down fa-caret-right');
+	        $(this).children('i').toggleClass('fa-caret-down fa-caret-right');
 	    });
 	    $('.yearToggle').click(function () {
 	        $(this).parent('h2').siblings('.timeline-month').slideToggle('slow');
-	        $(this).siblings('i').toggleClass('fa-caret-down fa-caret-right');
+	        $(this).children('i').toggleClass('fa-caret-down fa-caret-right');
 	    });
 	});
 });

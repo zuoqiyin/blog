@@ -1,11 +1,9 @@
 ﻿/*全局样式*/
-body {
-    background: #eee;
-    color: #444;
-}
+body {background: #eee;color: #444;}
 
 .shadow {
     box-shadow: 0 2px 10px 0 rgba(0,0,0,.1);
+    border-radius: 10px;
 }
 
 .clear {
@@ -61,6 +59,7 @@ body {
 
 /* 小屏幕（平板，大于等于 768px） */
 @media (min-width: 768px) {
+		
     .blog-container {
         width: 738px;
         margin: 0 auto;
@@ -191,7 +190,15 @@ body {
 			line-height: 64px;
 			padding-right: 20px;
 		}
-
+		
+		.blog-nav .blog-user a:nth-child(2) {
+			display: none
+		}
+		
+		.blog-nav .blog-user a:nth-child(3) {
+			display: none
+		}
+		
         .blog-nav .blog-user .fa-user-circle-o {
             line-height: 72px;
             font-size: 36px;
@@ -213,7 +220,7 @@ body {
             width: 50px;
             height: 50px;
             border-radius: 50px;
-			margin-top: -12px;
+			margin-top: -0px;
         }
 
             .blog-nav .blog-user img:hover {
@@ -224,7 +231,7 @@ body {
         position: absolute;
         top: 0px;
         left: 25%;
-        width: 25%;
+        width: 50%;
         text-align: center;
         margin: 0 auto;
         line-height: 64px;
@@ -260,9 +267,16 @@ body {
 
     .blog-nav .blog-logo {
         position: absolute;
-        left: 10%;
+        left: 5%;
         width: auto;
     }
+    .blog-nav .blog-user a:nth-child(2),.blog-nav .blog-user a:nth-child(3) {
+		display: inline-block;
+	}
+	
+	.blog-nav .blog-user img {
+			margin-top: -12px;
+     }
 
     .blog-nav .blog-navicon {
         display: none;
@@ -575,6 +589,12 @@ body {
         padding: 0 0 5px 0;
         margin-bottom: 5px;
     }
+   	.blog-module P{
+        font-family: '楷体';
+        padding: 5px 0px;
+        line-height: 24px;
+        font-size:16px;
+    }
 
 .blog-module-ul li,
 .blog-module-ul .fa {
@@ -856,8 +876,8 @@ body {
         margin-left: 53px;
     }
 
-    .blog-comment .info-footer {
-        font-size: 13px;
+    .blog-comment .fa-clock-o {
+        font-size: 18px;
     }
 
     .blog-comment .info,
@@ -869,22 +889,38 @@ body {
             margin-bottom: 5px;
         }
 
-        .blog-comment .info span {
+        .blog-comment .info span,.blog-comment .info a img {
             padding-right: 5px;
+            font-size: 14px;
+            height:16px;
+            width:16px
         }
-
+		
+		.blog-comment .info .dh {
+			margin-left: 10%;
+		}
+		
+		.blog-comment .info .dh a{
+			padding-right: 10px;
+		}
+		
+		.blog-comment .info a img:hover {
+			opacity: 0.8;
+		}
+		
         .blog-comment .info .username {
             color: #01AAED;
+            font-size: 16px;
         }
 
         .blog-comment .info .btn-reply {
-            color: #009688;
+            color: ;
         }
 
     .blog-comment .content {
         padding: 2px 0 5px 0;
         min-height: 30px;
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .blog-comment hr {
@@ -899,7 +935,7 @@ body {
     border-radius: 50px;
 }
 
-.comment-child img {
+.comment-child > img {
     width: 40px;
     height: 40px;
     margin: 5px 5px 5px 0;
@@ -911,12 +947,6 @@ body {
     margin-left: 53px;
     min-height: 50px;
 }
-
-    .comment-child .info {
-        margin-left: 48px;
-        font-size: 12px;
-        line-height: 20px;
-    }
 /*评论与留言END*
 
 /***********************************************动画定义*************************************************/

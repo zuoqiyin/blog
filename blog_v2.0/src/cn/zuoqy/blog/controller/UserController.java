@@ -105,10 +105,10 @@ public class UserController {
 						"			<p style=\"line-height: 20px; margin: 0; margin-bottom: 10px; padding: 0;\">"+
 						"				你好，"+
 						"				<em style=\"font-weight: 700;\">"+user.getName()+"</em>"+
-						"				童鞋，请在30分钟内重置您的密码："+
+						"				童鞋，请在30分钟内激活您的密码："+
 						"			</p>"+
 						"			<div style=\"\">"+
-						"				<a href=\""+path+"/activeEmail.html?token="+user.getToken()+"&uid="+user.getUid()+"&email="+user.getEmail() + "\" style=\"background-color: #009E94; color: #fff; display: inline-block; height: 32px; line-height: 32px; margin: 0 15px 0 0; padding: 0 15px; text-decoration: none;\" target=\"_blank\">立即重置密码</a>"+
+						"				<a href=\""+path+"/activeEmail.html?token="+user.getToken()+"&uid="+user.getUid()+"&email="+user.getEmail() + "\" style=\"background-color: #009E94; color: #fff; display: inline-block; height: 32px; line-height: 32px; margin: 0 15px 0 0; padding: 0 15px; text-decoration: none;\" target=\"_blank\">立即激活邮箱</a>"+
 						"			</div>"+
 						"			<p style=\"line-height: 20px; margin-top: 20px; padding: 10px; background-color: #f2f2f2; font-size: 12px;\"> 如果该邮件不是由你本人操作，请勿操作！否则你的邮箱可能存在安全隐患。 </p>"+
 						"			</td>"+
@@ -172,7 +172,7 @@ public class UserController {
 						"		<tr style=\"background-color: #393D49; height: 60px; margin: 0; padding: 0;\">"+
 						"			<td style=\"margin: 0; padding: 0;\">"+
 						"				<div style=\"color: #5EB576; margin: 0; margin-left: 30px; padding: 0;\">"+
-						"					<a style=\"font-size: 14px; margin: 0; padding: 0; color: #5EB576; text-decoration: none;\" href=\""+path+"\" target=\"_blank\">zuoqy博客-找回密码</a>"+
+						"					<a style=\"font-size: 14px; margin: 0; padding: 0; color: #5EB576; text-decoration: none;\" href=\""+path+"\" target=\"_blank\">zuoqy博客-重置密码</a>"+
 						"				</div>"+
 						"			</td>"+
 						"		</tr>"+

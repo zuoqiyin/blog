@@ -16,4 +16,6 @@ public interface ArticleDao {
 	public List<Article> selectArticle(Map<String, Object> params) throws Exception;
 	
 	public int getCount(Map<String, Object> params) throws Exception;
+	
+	public int updateArticle(Map<String, Object> params) throws Exception;
 }

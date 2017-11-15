@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; Charset=utf-8">
     <meta http-equiv="Content-Language" content="zh-CN">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <title>zuoqy- 一个java程序员的个人博客网站</title>
+    <title>zuoqy-一个java程序员的个人博客网站</title>
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <!--Layui-->
     <link href="layui/css/layui.css" rel="stylesheet" />
@@ -51,10 +51,19 @@
     </nav>
     <!-- 主体（一般只改变这里的内容） -->
     <div class="blog-body">
+    	<div class="layui-carousel blog-bg" id="carousel">
+		  <div carousel-item>
+		    <div class="bg bg_a"></div>
+		    <div class="bg bg_b"></div>
+		    <div class="bg bg_c"></div>
+		    <div class="bg bg_d"></div>
+		    <div class="bg bg_e"></div>
+		  </div>
+		</div>
         <!-- canvas -->
-        <canvas id="canvas-banner" style="background: #393D49;"></canvas>
+        <!-- <canvas id="canvas-banner" style="background: #393D49;"></canvas> -->
         <!--为了及时效果需要立即设置canvas宽高-->
-        <script type="text/javascript">
+        <!-- <script type="text/javascript">
             var canvas = document.getElementById('canvas-banner');
             canvas.width = window.document.body.clientWidth - 10;//减去滚动条的宽度
             if (screen.width >= 992) {
@@ -62,7 +71,7 @@
             } else {
                 canvas.height = window.innerHeight * 2 / 7;
             }
-        </script>
+        </script> -->
         <!-- 这个一般才是真正的主体内容 -->
         <div class="blog-container">
             <div class="blog-main">
@@ -70,10 +79,11 @@
                 <div class="home-tips shadow">
                     <i style="float:left;line-height:17px;" class="fa fa-volume-up"></i>
                     <div class="home-tips-container">
-                        <span style="color: #009688">偷偷告诉大家，这是zuoqy博客！</span>
-                        <span style="color: red">网站新增留言回复啦！使用QQ登陆即可回复，人人都可以回复！</span>
+                        <span style="color: #009688">zuoqy —— 一个java程序员的个人博客，新版网站采用Layui为前端框架，目前正在建设中！</span>
+                        <span style="color: #009688">有事做有所期待，日子就是幸福的</span>
                         <span style="color: red">如果你觉得网站做得还不错，来Fly社区点个赞吧！<a href="http://fly.layui.com/case/2017/" target="_blank" style="color:#01AAED">点我前往</a></span>
-                        <span style="color: #009688">zuoqy &nbsp;—— &nbsp;一个java程序员的个人博客，新版网站采用Layui为前端框架，目前正在建设中！</span>
+                        <span style="color: #009688">用心每一天，不忘初心，方能走远</span>
+                        <span style="color: #009688">偷偷挤进一缕斜阳，送来满满幸福</span>
                     </div>
                 </div>
                 <!--左边文章列表-->
@@ -84,52 +94,57 @@
                 	<!-- 小编信息 -->
                     <div class="blogerinfo shadow animated fadeInRight">
                         <div class="blogerinfo-figure">
-                            <img src="images/user/0.jpg" alt="Absolutely" />
+                            <img src="images/admin.jpg" alt="Absolutely" />
                         </div>
                         <p class="blogerinfo-nickname">zuoqy</p>
                         <p class="blogerinfo-introduce">一枚90后程序员，java开发工程师</p>
                         <p class="blogerinfo-location"><i class="fa fa-location-arrow"></i>&nbsp;中国 - 北京</p>
                         <hr />
                         <div class="blogerinfo-contact">
-                            <a target="_blank" title="QQ交流" href="javascript:layer.msg('启动QQ会话窗口')"><i class="fa fa-qq fa-2x"></i></a>
-                            <a target="_blank" title="给我写信" href="javascript:layer.msg('启动邮我窗口')"><i class="fa fa-envelope fa-2x"></i></a>
-                            <a target="_blank" title="新浪微博" href="javascript:layer.msg('转到你的微博主页')"><i class="fa fa-weibo fa-2x"></i></a>
-                            <a target="_blank" title="码云" href="javascript:layer.msg('转到你的github主页')"><i class="fa fa-git fa-2x"></i></a>
+                            <a target="_blank" title="QQ交流" href="http://shang.qq.com/email/stop/email_stop.html?qq=2065820975"><i class="fa fa-qq fa-2x"></i></a>
+                            <a target="_blank" title="给我写信" href="mailto:zuoqiyin@163.com"><i class="fa fa-envelope fa-2x"></i></a>
+                            <a target="_blank" title="新浪微博" href="http://weibo.com/zuoqiyin"><i class="fa fa-weibo fa-2x"></i></a>
+                            <a target="_blank" title="GitHub" href="https://github.com/zuoqiyin"><i class="fa fa-git fa-2x"></i></a>
                         </div>
                     </div>
                     <!--热文推荐/点击排行-->
                     <div class="layui-tab layui-tab-brief shadow animated fadeInRight" lay-filter="docDemoTabBrief">
 						<ul class="layui-tab-title">
 							<li class="layui-this">点击排行</li>
-							<li>热文推荐</li>
+							<li>站长推荐</li>
 						</ul>
   						<div class="layui-tab-content">
   							<div class="layui-tab-item layui-show">
 	                        	<ul class="blog-module-ul">
-		                            <li><i class="layui-badge-rim layui-bg-red">1</i>&nbsp;&nbsp;<a>Web安全之跨站请求伪造CSRF</a></li>
-		                            <li><i class="layui-badge-rim layui-bg-orange">2</i>&nbsp;&nbsp;<a href="detail.html">ASP.NET MVC 防范跨站请求伪造（CSRF）</a></li>
-		                            <li><i class="layui-badge-rim layui-bg-green">3</i>&nbsp;&nbsp;<a href="detail.html">常用正则表达式</a></li>
-		                            <li><i class="layui-badge-rim">4</i>&nbsp;&nbsp;<a href="detail.html">EF CodeFirst数据迁移常用指令</a></li>
+		                            <li><i class="layui-badge-rim layui-bg-red">1</i>&nbsp;&nbsp;<a href="detail.html?aid=0001"><i class="layui-icon">&#xe609;</i>终于等来了,zuoqy博客v0.1!</a></li>
+		                            <li><i class="layui-badge-rim layui-bg-orange">2</i>&nbsp;&nbsp;<a href="detail.html?aid=0005">操之过急留下的诟病</a></li>
+		                            <li><i class="layui-badge-rim layui-bg-green">3</i>&nbsp;&nbsp;<a href="detail.html?aid=0003">不要让网络绑架了你!</a></li>
+		                            <li><i class="layui-badge-rim">4</i>&nbsp;&nbsp;<a href="detail.html?aid=0004">阿里云ECS无法使用25端口发送邮件解决方法</a></li>
 		                        </ul>
 	                        </div>
   							<div class="layui-tab-item">
 		  						<ul class="blog-module-ul">
-		                            <li><i class="layui-badge-rim layui-bg-red">1</i>&nbsp;&nbsp;<a>Web安全之跨站请求伪造CSRF</a></li>
-		                            <li><i class="layui-badge-rim layui-bg-orange">2</i>&nbsp;&nbsp;<a href="detail.html">ASP.NET MVC 防范跨站请求伪造（CSRF）</a></li>
-		                            <li><i class="layui-badge-rim layui-bg-green">3</i>&nbsp;&nbsp;<a href="detail.html">常用正则表达式</a></li>
-		                        	<li><i class="layui-badge-rim">4</i>&nbsp;&nbsp;<a href="detail.html">EF CodeFirst数据迁移常用指令</a></li>
+		                            <li><i class="layui-badge-rim layui-bg-red">1</i>&nbsp;&nbsp;<a href="detail.html?aid=0004">阿里云ECS无法使用25端口发送邮件解决方法</a></li>
+		                            <li><i class="layui-badge-rim layui-bg-orange">2</i>&nbsp;&nbsp;<a href="detail.html?aid=0003">不要让网络绑架了你!</a></li>
+		                            <li><i class="layui-badge-rim layui-bg-green">3</i>&nbsp;&nbsp;<a href="detail.html?aid=0002">PL/SQL入门</a></li>
+		                        	<li><i class="layui-badge-rim">4</i>&nbsp;&nbsp;<a href="detail.html?aid=0001"><i class="layui-icon">&#xe609;</i>终于等来了,zuoqy博客v0.1!</a></li>
 		                        </ul>
 	                        </div>
   						</div>
 					</div>
+					<!-- 个性签名 -->
+					<div class="blog-module shadow animated fadeInRight">
+                        <div class="blog-module-title"><i class="fa fa-file-text-o"></i>&nbsp;个性签名</div>
+                        <p>软件最大的好处，就是让一切变得简单。但是，做到这一点的方法，是正确设置缺省值，而不是限制用户的选择。&nbsp;&nbsp;&nbsp;--Paul Graham<p> 
+                    </div>
 					<!-- 广告 -->
 					<div></div>
 					<!-- 友情链接 -->      
                     <div class="blog-module shadow animated fadeInRight">
-                        <div class="blog-module-title">友情链接</div>
+                        <div class="blog-module-title"><i class="fa fa-link"></i>&nbsp;友情链接</div>
                         <ul class="blogroll">
                             <li><a target="_blank" href="http://www.layui.com/" title="Layui">Layui</a></li>
-                            <li><a target="_blank" href="http://www.pagemark.cn/" title="页签">页签</a></li>
+                            <li><a target="_blank" href="http://www.zuoqy.cn/old" title="Layui">zuoqy博客v0.1</a></li>
                         </ul>
                     </div>    
                 </div>
@@ -139,8 +154,8 @@
     </div>
     <!-- 底部 -->
     <footer class="blog-footer">
-        <p><span>Copyright</span><span>&copy;</span><span>2017</span><a href="http://www.lyblogs.cn">zuoqy</a><span>Design By ZQY</span></p>
-        <p>京ICP备17058348号-1</p>
+        <p><span>Copyright</span><span>&copy;</span><span>2017</span><a href="http://www.zuoqy.cn">zuoqy</a><span>Design By ZQY</span></p>
+        <p><a href="http://www.miibeian.gov.cn" target="_blank">京ICP备17058348号-1</a></p>
     </footer>
     <!--侧边导航-->
     <ul class="layui-nav layui-nav-tree layui-nav-side blog-nav-left layui-hide" lay-filter="nav">
@@ -210,6 +225,7 @@
     <script src="layui/layui.js"></script>
     <!-- 全局脚本 -->
     <script src="js/global.js"></script>
+    <script src="js/canvas-particle.js"></script>
     <!-- 本页脚本 -->
     <script src="js/index.js"></script>
     <!-- 音乐播放器 -->

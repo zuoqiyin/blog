@@ -1,4 +1,31 @@
-﻿/*博主信息*/
+﻿.bg {
+	background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+	margin: 0 auto;
+	border-radius: 10px;
+}
+
+.blog-bg {
+    position: relative;
+    margin: 0 auto;
+}
+
+.bg_a {background-image: url("../images/bg/carousel1.jpg");}
+.bg_b {background-image: url("../images/bg/carousel2.jpg");}
+.bg_c {background-image: url("../images/bg/carousel3.jpg");}
+.bg_d {background-image: url("../images/bg/carousel4.jpg");}
+.bg_e {background-image: url("../images/bg/carousel5.jpg");}
+
+@media (min-width: 768px) {
+	.bg_a {background-image: url("../images/bg/a.jpg");}
+	.bg_b {background-image: url("../images/bg/b.jpg");}
+	.bg_c {background-image: url("../images/bg/c.jpg");}
+	.bg_d {background-image: url("../images/bg/d.jpg");}
+	.bg_e {background-image: url("../images/bg/e.jpg");}
+}
+
+/*博主信息*/
 .blogerinfo {
     text-align: center;
     padding: 0 15px;

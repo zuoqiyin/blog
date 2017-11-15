@@ -3,12 +3,13 @@ var pics = {
       {"src": "images/pic/1.jpg",   "alt": "盘中餐",},
       {"src": "images/pic/2.jpg",   "alt": "向日葵"},
       {"src": "images/pic/3.jpg",   "alt": "日出"},
-      {"src": "images/pic/4.jpg",   "alt": "水果平盘"},
+      {"src": "images/pic/4.jpg",   "alt": "水果拼盘"},
       {"src": "images/pic/5.jpg",   "alt": "花园"},
       {"src": "images/pic/6.jpg",   "alt": "红花"},
       {"src": "images/pic/7.jpg",   "alt": "2017/05/30 17:02 快出锅青椒肉丝"},
       {"src": "images/pic/8.jpg",   "alt": "2017/09/23 15:56 s216大道"},
-      {"src": "images/pic/9.jpg",   "alt": "2017/11/01 11:03 活捉金海湖一匹马"}
+      {"src": "images/pic/9.jpg",   "alt": "2017/11/01 11:03 活捉金海湖一匹马"},
+      {"src": "images/pic/10.jpg",  "alt": "2017/11/02 12:55 石花洞 钟乳石"}
    ]};
 layui.use(['jquery','flow'], function () {
 	var $ = layui.jquery;
@@ -17,7 +18,8 @@ layui.use(['jquery','flow'], function () {
     var count = pics.data.length-1;
     flow.load({
     	elem: '.mixed-main', //流加载容器
-    	isAuto: false,
+    	isAuto: true,
+    	end: '没有更多的图片了~QAQ',
     	done: function(page,next) {
     		var lis = [];
     		for (var i=0; i<8; i++) {

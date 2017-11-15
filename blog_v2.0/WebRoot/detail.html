@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; Charset=utf-8">
     <meta http-equiv="Content-Language" content="zh-CN">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <title>zuoqy- 一个java程序员的个人博客网站</title>
+    <title>zuoqy博客文章专栏</title>
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <!--Layui-->
     <link href="layui/css/layui.css" rel="stylesheet" />
@@ -55,7 +55,7 @@
         <div class="blog-container">
             <div class="blog-main">
                 <blockquote class="layui-elem-quote sitemap layui-breadcrumb shadow">
-                	<a href="home.html" title="网站首页">网站首页</a>
+                	<a href="index.html" title="网站首页">网站首页</a>
                 	<a href="article.html" title="文章专栏">文章专栏</a>
                 	<a><cite class="title"></cite></a>
            		</blockquote>
@@ -80,29 +80,16 @@
                             <div class="layui-field-box">
                                 <form class="layui-form blog-editor" action="">
                                     <div class="layui-form-item">
-                                        <textarea name="editorContent" lay-verify="content" id="remarkEditor" placeholder="请输入内容" class="layui-textarea layui-hide"></textarea>
+                                        <textarea name="editorContent" lay-verify="content" id="remarkEditor" placeholder="请输入内容" class="layui-textarea"></textarea>
                                     </div>
                                     <div class="layui-form-item">
-                                        <button class="layui-btn" lay-submit="formRemark" lay-filter="formRemark">提交评论</button>
+                                        <button class="layui-btn" lay-submit="formLeaveMessage" lay-filter="formLeaveMessage">提交评论</button>
                                     </div>
                                 </form>
                             </div>
                         </fieldset>
                         <div class="blog-module-title">最新评论</div>
-                        <ul class="blog-comment">
-                            <li>
-                                <div class="comment-parent">
-                                    <img src="../images/Absolutely.jpg" alt="absolutely" />
-                                    <div class="info">
-                                        <span class="username">Absolutely</span>
-                                        <span class="time">2017-03-18 18:46:06</span>
-                                    </div>
-                                    <div class="content">
-                                        我为大家做了模拟评论功能！还有，这个评论功能也可以改成和留言一样，但是目前没改，有兴趣可以自己改
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                        <ul class="blog-comment"></ul>
                     </div>
                 </div>
                 <!--右边小栏目-->
@@ -137,8 +124,8 @@
     </div>
     <!-- 底部 -->
     <footer class="blog-footer">
-        <p><span>Copyright</span><span>&copy;</span><span>2017</span><a href="http://www.lyblogs.cn">zuoqy</a><span>Design By ZQY</span></p>
-        <p>京ICP备17058348号-1</p>
+        <p><span>Copyright</span><span>&copy;</span><span>2017</span><a href="http://www.zuoqy.cn">zuoqy</a><span>Design By ZQY</span></p>
+        <p><a href="http://www.miibeian.gov.cn" target="_blank">京ICP备17058348号-1</a></p>
     </footer>
     <!--侧边导航-->
     <ul class="layui-nav layui-nav-tree layui-nav-side blog-nav-left layui-hide" lay-filter="nav">
@@ -208,8 +195,11 @@
     <script src="layui/layui.js"></script>
     <!-- 全局脚本 -->
     <script src="js/global.js"></script>
+    <script src="js/canvas-particle.js"></script>
     <!-- 本页脚本 -->
     <script src="js/detail.js"></script>
+    <!-- 评论留言 -->
+    <script src="js/message.js"></script>
     <!-- 音乐播放器 -->
     <script src="js/jquery.min.js"></script>
 	<script src="js/jquery.marquee.min.js"></script>

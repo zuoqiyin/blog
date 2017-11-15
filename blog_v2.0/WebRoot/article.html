@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; Charset=utf-8">
     <meta http-equiv="Content-Language" content="zh-CN">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <title>zuoqy- 一个java程序员的个人博客网站</title>
+    <title>zuoqy博客-文章专栏</title>
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <!--Layui-->
     <link href="layui/css/layui.css" rel="stylesheet" />
@@ -54,7 +54,7 @@
         <!-- 这个一般才是真正的主体内容 -->
         <div class="blog-container">
         	<blockquote class="layui-elem-quote sitemap layui-breadcrumb shadow">
-                <a href="home.html" title="网站首页">网站首页</a>
+                <a href="index.html" title="网站首页">网站首页</a>
                 <a><cite>文章专栏</cite></a>
         	</blockquote>
             <div class="blog-main">
@@ -82,30 +82,30 @@
                         <a href="javascript:go(1)">杂文随笔</a>
                         <a href="javascript:go(2)">JAVA基础</a>
                         <a href="javascript:go(3)">Web前端</a>
-                        <a href="javascript:go(4)">My Sql</a>
+                        <a href="javascript:go(4)">数据库</a>
                         <div class="clear"></div>
                     </div>
                     <!--热文推荐/点击排行-->
                     <div class="layui-tab layui-tab-brief shadow animated fadeInRight" lay-filter="docDemoTabBrief">
 						<ul class="layui-tab-title">
 							<li class="layui-this">点击排行</li>
-							<li>热文推荐</li>
+							<li>站长推荐</li>
 						</ul>
   						<div class="layui-tab-content">
   							<div class="layui-tab-item layui-show">
 	                        	<ul class="blog-module-ul">
-		                            <li><i class="layui-badge-rim layui-bg-red">1</i>&nbsp;&nbsp;<a>Web安全之跨站请求伪造CSRF</a></li>
-		                            <li><i class="layui-badge-rim layui-bg-orange">2</i>&nbsp;&nbsp;<a href="detail.html">ASP.NET MVC 防范跨站请求伪造（CSRF）</a></li>
-		                            <li><i class="layui-badge-rim layui-bg-green">3</i>&nbsp;&nbsp;<a href="detail.html">常用正则表达式</a></li>
-		                            <li><i class="layui-badge-rim">4</i>&nbsp;&nbsp;<a href="detail.html">EF CodeFirst数据迁移常用指令</a></li>
+		                            <li><i class="layui-badge-rim layui-bg-red">1</i>&nbsp;&nbsp;<a href="detail.html?aid=0001"><i class="layui-icon">&#xe609;</i>终于等来了,zuoqy博客v0.1!</a></li>
+		                            <li><i class="layui-badge-rim layui-bg-orange">2</i>&nbsp;&nbsp;<a href="detail.html?aid=0005">操之过急留下的诟病</a></li>
+		                            <li><i class="layui-badge-rim layui-bg-green">3</i>&nbsp;&nbsp;<a href="detail.html?aid=0003">不要让网络绑架了你!</a></li>
+		                            <li><i class="layui-badge-rim">4</i>&nbsp;&nbsp;<a href="detail.html?aid=0004">阿里云ECS无法使用25端口发送邮件解决方法</a></li>
 		                        </ul>
 	                        </div>
   							<div class="layui-tab-item">
 		  						<ul class="blog-module-ul">
-		                            <li><i class="layui-badge-rim layui-bg-red">1</i>&nbsp;&nbsp;<a>Web安全之跨站请求伪造CSRF</a></li>
-		                            <li><i class="layui-badge-rim layui-bg-orange">2</i>&nbsp;&nbsp;<a href="detail.html">ASP.NET MVC 防范跨站请求伪造（CSRF）</a></li>
-		                            <li><i class="layui-badge-rim layui-bg-green">3</i>&nbsp;&nbsp;<a href="detail.html">常用正则表达式</a></li>
-		                        	<li><i class="layui-badge-rim">4</i>&nbsp;&nbsp;<a href="detail.html">EF CodeFirst数据迁移常用指令</a></li>
+		                            <li><i class="layui-badge-rim layui-bg-red">1</i>&nbsp;&nbsp;<a href="detail.html?aid=0004">阿里云ECS无法使用25端口发送邮件解决方法</a></li>
+		                            <li><i class="layui-badge-rim layui-bg-orange">2</i>&nbsp;&nbsp;<a href="detail.html?aid=0003">不要让网络绑架了你!</a></li>
+		                            <li><i class="layui-badge-rim layui-bg-green">3</i>&nbsp;&nbsp;<a href="detail.html?aid=0002">PL/SQL入门</a></li>
+		                        	<li><i class="layui-badge-rim">4</i>&nbsp;&nbsp;<a href="detail.html?aid=0001"><i class="layui-icon">&#xe609;</i>终于等来了,zuoqy博客v0.1!</a></li>
 		                        </ul>
 	                        </div>
   						</div>
@@ -119,8 +119,8 @@
     </div>
     <!-- 底部 -->
     <footer class="blog-footer">
-        <p><span>Copyright</span><span>&copy;</span><span>2017</span><a href="http://www.lyblogs.cn">zuoqy</a><span>Design By ZQY</span></p>
-        <p>京ICP备17058348号-1</p>
+        <p><span>Copyright</span><span>&copy;</span><span>2017</span><a href="http://www.zuoqy.cn">zuoqy</a><span>Design By ZQY</span></p>
+        <p><a href="http://www.miibeian.gov.cn" target="_blank">京ICP备17058348号-1</a></p>
     </footer>
     <!--侧边导航-->
     <ul class="layui-nav layui-nav-tree layui-nav-side blog-nav-left layui-hide" lay-filter="nav">
@@ -190,6 +190,7 @@
     <script src="layui/layui.js"></script>
     <!-- 全局脚本 -->
     <script src="js/global.js"></script>
+    <script src="js/canvas-particle.js"></script>
     <!-- 本页脚本 -->
     <script src="js/article.js"></script>
     <!-- 音乐播放器 -->

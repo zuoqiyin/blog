@@ -26,7 +26,11 @@ layui.use(['jquery','form'], function () {
     		success:function(result) {
     			if (result.code==1) {
     				MyLocalStorage.put("user", JSON.stringify(result.item), 360*24*3);
-    				window.history.back(-1);
+    				if (document.referrer.split('?')[0].lastIndexOf('resetPwd.html')>0) {
+    					location.href = _contextPath+'/index.html';
+    				} else {    					
+    					window.history.back(-1);
+    				}
     			} else {
     				layer.msg(result.msg,{anim:6});
     			}

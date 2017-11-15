@@ -64,6 +64,7 @@ layui.use(['jquery','form'], function () {
     				layer.close(index);
     				layer.msg("上传成功!",{icon:1});
     				$("#upload-img").attr("src",_contextPath+"/images"+user.img+"?"+Math.random());
+    				$(".blog-user img").attr("src",_contextPath+"/images"+user.img+"?"+Math.random());
     			} else {
     				layer.msg(result.msg,{anim:6});
     				layer.close(index);

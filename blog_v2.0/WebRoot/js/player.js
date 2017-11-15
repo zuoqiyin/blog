@@ -98,7 +98,7 @@
 				$('.marquee').marquee('resume');
 		    }
 	    }
-	}
+	};
 
 	var pause = function(){
 		audio.pause();
@@ -108,7 +108,7 @@
 		if(isExceedTag()) {
 			$('.marquee').marquee('pause');
 		}
-	}
+	};
 
 	// Update progress
 	var setProgress = function(value){

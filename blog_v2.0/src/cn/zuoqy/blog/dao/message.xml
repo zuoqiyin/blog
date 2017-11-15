@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zuoqy.blog.dao.MessageDao">
+	<resultMap type="message" id="messageMap">
+		<id column="mid" property="mid" />
+		<result column="uid"     property="uid"/>
+		<result column="aid"     property="aid"/>
+		<result column="content" property="content"/>
+		<result column="time"    property="time"/>
+		<result column="dzan"    property="dzan"/>
+		<result column="isYe"    property="isYe"/>
+		<result column="name"    property="name"/>
+		<result column="img"     property="img"/>
+		<collection property="item" ofType="message">
+			<result column="_mid"     property="mid"/>
+			<result column="_uid"     property="uid"/>
+			<result column="_aid"     property="aid"/>
+			<result column="_content" property="content"/>
+			<result column="_time"    property="time"/>
+			<result column="_dzan"    property="dzan"/>
+			<result column="_isYe"    property="isYe"/>
+			<result column="_name"    property="name"/>
+			<result column="_img"     property="img"/>
+		</collection>
+	</resultMap>
+	
+	<select id="selectMessage" parameterType="java.util.Map" resultMap="messageMap">
+		select a.*,c.name,c.img,
+		b.mid _mid,b.uid _uid, b.aid _aid, b.content _content, b.time _time, b.dzan _dzan,b.isYe _isYe,d.name _name,d.img _img
+		from message a
+		left join user c on c.uid=a.uid
+		left join message b on b.isYe=a.mid
+		left join user d on d.uid=b.uid
+		where a.aid=#{aid} and a.isYe = #{isYe}
+		order by a.time desc, b.time desc
+		limit #{index},#{size}
+	</select>
+	
+	<select id="getCount" parameterType="java.util.Map" resultType="int">
+		select count(1) from message where aid=#{aid} and isYe = #{isYe}
+	</select>
+	
+	<select id="getMessage" parameterType="java.util.Map" resultType="message">
+		select * from message where mid=#{mid}
+	</select>
+	
+	<update id="updateMessage" parameterType="java.util.Map">
+		update message set dzan = #{dzan} where mid=#{mid}
+	</update>
+	
+	<insert id="addMessage" parameterType="message">
+		insert into message values(#{mid},#{uid},#{aid},#{content},#{time},#{dzan},#{isYe})
+	</insert>
+</mapper>

@@ -14,6 +14,12 @@
 		<include refid="whereArtSql"></include>
 	</select>
 	
+	<update id="updateArticle" parameterType="java.util.Map">
+		update article set 
+		<if test="comCount!=null and comCount!=''">comCount=#{comCount}</if>
+		<if test="viewCount!=null and viewCount!=''">viewCount=#{viewCount}</if>
+		where aid=#{aid}
+	</update>
 	<sql id="whereArtSql">
 		<trim prefix="WHERE" prefixOverrides="AND|OR">
 			<if test="aid!=null and aid!=''"> and a.aid=#{aid}</if>

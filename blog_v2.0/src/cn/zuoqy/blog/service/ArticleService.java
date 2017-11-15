@@ -19,4 +19,6 @@ public interface ArticleService {
 	public Article getArticle(String aid) throws Exception;
 	
 	public int getCount(Map<String, Object> params) throws Exception;
+	
+	public void addCom(String aid) throws Exception;
 }
