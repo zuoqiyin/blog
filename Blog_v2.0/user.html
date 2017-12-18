@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; Charset=utf-8">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>zuoqy博客-个人中心</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <!--Layui-->
+    <link href="layui/css/layui.css" rel="stylesheet" />
+    <!--font-awesome-->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <!--全局样式表-->
+    <link href="css/global.css" rel="stylesheet" />
+    <!-- 本页样式表 -->
+    <link href="css/user.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- 导航 -->
+    <nav class="blog-nav layui-header">
+        <div class="blog-container">
+            <!-- 用户登陆 -->
+            <div class="blog-user"></div>
+            <!-- zuoqy -->
+            <a class="blog-logo" href="index.html"><img src="images/logo.png" width="64px" height="64px"></a>
+            <!-- 导航菜单 -->
+            <ul class="layui-nav" lay-filter="nav">
+                <li class="layui-nav-item">
+                    <a href="index.html"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="article.html"><i class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="mixed_pic.html"><i class="fa fa-paper-plane-o fa-fw"></i>&nbsp;杂七杂八</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="timeline.html"><i class="fa fa-hourglass-half fa-fw"></i>&nbsp;点点滴滴</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="about.html"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
+                </li>
+            </ul>
+            <!-- 手机和平板的导航开关 -->
+            <a class="blog-navicon" href="javascript:;">
+                <i class="fa fa-navicon"></i>
+            </a>
+        </div>
+    </nav>
+    <!-- 主体（一般只改变这里的内容） -->
+    <div class="blog-body">
+        <div class="blog-container">
+        	<input id="token" type="hidden">
+			<input id="uid" type="hidden">
+            <blockquote class="layui-elem-quote sitemap layui-breadcrumb shadow">
+                <a href="index.html" title="网站首页">网站首页</a>
+                <a><cite>个人中心</cite></a>
+            </blockquote>
+            <div class="blog-main">
+           		<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+		    	<ul class="layui-tab-title">
+		    		<li class="layui-this" id="myInfo">我的资料</li>
+		    		<li>我的消息</li>
+		    		<li>我的回复</li>
+		    		<li>头像</li>
+		    		<li>密码</li>
+		    		<li id="activeEmail" style="display: none">激活邮箱</li>
+		    	</ul>
+		    	<div class="layui-tab-content">
+		    		<!-- 我的资料 -->
+		    		<div class="layui-tab-item layui-show">
+			    		<form class="layui-form layui-form-pane" method="post">
+			    			<div class="layui-form-item">
+						    	<label class="layui-form-label">邮箱</label>
+					    		<div class="layui-input-inline">
+					        		<input id="email" type="text" name="email" required  lay-verify="email" autocomplete="off" class="layui-input">
+					        	</div>
+					        	<div class="layui-form-mid layui-word-aux">如果您在邮箱已激活的情况下,变更了邮箱,需要<a class="link" id="activaEmailBtn">重新激活邮箱。</a></div>
+					    	</div>
+					    	<div class="layui-form-item">
+						    	<label class="layui-form-label">昵称</label>
+					    		<div class="layui-input-inline">
+					        		<input id="name" type="text" name="name" required  lay-verify="required" autocomplete="off" class="layui-input">
+					        	</div>
+				            	<div class="layui-input-inline">
+						    		<input type="radio" name="sex" value="0" title="男">
+						    		<input type="radio" name="sex" value="1" title="女">
+						    	</div>
+					    	</div>
+					    	<div class="layui-form-item">
+						    	<label class="layui-form-label">城市</label>
+					    		<div class="layui-input-inline">
+					        		<input id="city" type="text" name="city" autocomplete="off" class="layui-input">
+					        	</div>
+					    	</div>
+					    	<div class="layui-form-item layui-form-text">
+						    	<label class="layui-form-label">个性签名</label>
+						    	<div class="layui-input-block">
+						    		<textarea id="sign" name="sign" placeholder="随便写些什么刷下存在感" class="layui-textarea" style="max-height: 200px" ></textarea>
+						    	</div>
+					   		</div>
+					   		<div class="layui-form-item">
+						   		<div class="layui-input-inline">
+									<button class="layui-btn" lay-submit lay-filter="formInfo">确认修改</button>
+								</div>
+					   		</div>
+						</form>
+		    		</div>
+		    		<!-- 我的消息 -->
+    				<div class="layui-tab-item" id="myMessage">
+    					<div class="layui-tab layui-tab-brief" lay-filter="user">
+	    					<button class="layui-btn layui-btn-danger" id="LAY_msg">清空全部消息</button>
+	    					<div id="LAY_minemsg" style="margin-top: 10px;">
+		    					<ul class="mine-msg msgs">
+		    				    </ul>
+	    				     </div>
+    				    </div>
+    				</div>
+    				<!-- 我的回复 -->
+    				<div class="layui-tab-item" id="myMessage">
+    					<div class="layui-tab layui-tab-brief" lay-filter="user">
+	    					<div id="LAY_minemsg" style="margin-top: 10px;">
+		    					<ul class="revs">
+		    				     </ul>
+	    				     </div>
+    				    </div>
+    				</div>
+		    		<!-- 头像 -->
+    				<div class="layui-tab-item">
+    					<div class="pic">
+    						<p>建议尺寸168*168,支持jpg,png,gif,最大不能超过50kb</p>
+    						<button class="layui-btn upload-img" id="upload"><i class="layui-icon">&#xe67c;</i>上传图像</button>
+    						<form enctype="multipart/form-data" id="upload-form">
+    							<input class="layui-upload-file" name="file" type="file" id="upload-file">
+    						</form>
+    						<img id="upload-img" src="images/user/0.jpg">
+    					</div>
+    				</div>
+    				<!-- 密码 -->
+    				<div class="layui-tab-item">
+    					<form class="layui-form layui-form-pane" method="post">
+    						<div class="layui-form-item">
+						    	<label class="layui-form-label">新密码</label>
+					    		<div class="layui-input-inline">
+					        		<input type="password" name="pwd" required  lay-verify="required" autocomplete="off" class="layui-input">
+					        	</div>
+					        	<div class="layui-form-mid layui-word-aux">6到18个字符</div>
+					   		</div>
+					   		<div class="layui-form-item">
+						    	<label class="layui-form-label">确认密码</label>
+					    		<div class="layui-input-inline">
+					        		<input type="password" name="repwd" required  lay-verify="required" autocomplete="off" class="layui-input">
+					        	</div>
+					        <div class="layui-form-mid layui-word-aux"></div>
+					    	</div>
+					    	<div class="layui-form-item">
+						   		<div class="layui-input-inline">
+									<button class="layui-btn" lay-submit lay-filter="formPwd">确认修改</button>
+								</div>
+					   		</div>
+    					</form>
+    				</div>
+    				<!-- 激活邮箱 -->
+    				<div class="layui-tab-item" id="activeEmaliShow">
+    				
+    				</div>
+    				<!-- END -->    
+            	</div>
+            </div>
+           </div> 
+          </div>
+    </div>
+    <!-- 底部 -->
+    <footer class="blog-footer">
+        <p><span>Copyright</span><span>&copy;</span><span>2017</span><a href="http://www.zuoqy.cn">zuoqy</a><span>Design By ZQY</span></p>
+        <p><a href="http://www.miibeian.gov.cn" target="_blank">京ICP备17058348号-1</a></p>
+    </footer>
+    <!--侧边导航-->
+    <ul class="layui-nav layui-nav-tree layui-nav-side blog-nav-left layui-hide" lay-filter="nav">
+        <li class="layui-nav-item">
+            <a href="index.html"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="article.html"><i class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="mixed_pic.html"><i class="fa fa-paper-plane-o fa-fw"></i>&nbsp;杂七杂八</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="timeline.html"><i class="fa fa-road fa-fw"></i>&nbsp;点点滴滴</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="about.html"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
+        </li>
+    </ul>
+    <!--分享窗体-->
+    <div class="blog-share layui-hide">
+        <div class="blog-share-body">
+            <div style="width: 200px;height:100%;">
+                <div class="bdsharebuttonbox">
+                    <a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                    <a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                    <a class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                    <a class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 音乐播放器 -->
+    <div id="QPlayer">
+	<ol id="playlist"></ol>
+	<div id="pContent">
+		<div id="player">
+			<span class="cover"></span>
+			<div class="ctrl">
+				<div class="musicTag marquee">
+					<strong>Title</strong>
+					 <span> - </span>
+					<span class="artist">Artist</span>
+				</div>
+				<div class="progress">
+					<div class="timer left">0:00</div>
+					<div class="contr">
+						<div class="rewind icon"></div>
+						<div class="playback icon"></div>
+						<div class="fastforward icon"></div>
+					</div>
+					<div class="right">
+						<div class="liebiao icon"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ssBtn">
+		        <div class="adf"></div>
+	    </div>
+	</div>
+	</div>
+    <!--遮罩-->
+    <div class="blog-mask animated layui-hide"></div>
+    <!-- layui.js -->
+    <script src="layui/layui.js"></script>
+    <!-- 全局脚本 -->
+    <script src="js/global.js"></script>
+    <script src="js/canvas-particle.js"></script>
+    <!-- 本页脚本 -->
+    <script src="js/user.js"></script>
+    <!-- 音乐播放器 -->
+    <script src="js/jquery.min.js"></script>
+	<script src="js/jquery.marquee.min.js"></script>
+	<script src="js/player.js"></script>
+</body>
+</html>
