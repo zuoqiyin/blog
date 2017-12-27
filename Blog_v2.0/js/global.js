@@ -140,15 +140,6 @@ layui.use(['element', 'layer', 'util', 'form'], function () {
 	    //调用
 	    CanvasParticle(config);
 	    
-	    //百度统计
-	    var _hmt = _hmt || [];
-	    (function() {
-	      var hm = document.createElement("script");
-	      hm.src = "https://hm.baidu.com/hm.js?eb59b89197983e8991287fee2390f7de";
-	      var s = document.getElementsByTagName("script")[0]; 
-	      s.parentNode.insertBefore(hm, s);
-	    })();
-	    
     });
     
     
