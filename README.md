@@ -21,6 +21,6 @@
 
 第二个版本也停止更新<br/>
 
-新版博客:<a href="blog.zuoqy.cn">zuoqy博客</a>
+新版博客:<a href="http://blog.zuoqy.cn/">zuoqy博客</a>
 
 本博客源码,仅供学习研究，禁止商业使用，否者后果自负。
